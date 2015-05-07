@@ -1,0 +1,205 @@
+autostart = False
+version = 0.8.7
+[127.0.0.1:7200]
+    workingdir = C:\Users\CHR1ST\AppData\Local\Temp
+    udp = 10001
+    [[ETHSW SW1]]
+        2 = access 1 Q2 e0
+        3 = access 1 Q3 e0
+        4 = access 1 Q4 e0
+        5 = access 1 Q1 e0
+        x = -102.046247919
+        y = -88.9756133819
+        z = 1.0
+    [[ETHSW SW2]]
+        1 = access 1 Host1 e1
+        x = -412.500000001
+        y = 126.0
+        z = 1.0
+[vbox 127.0.0.1:11525]
+    workingdir = C:\Users\CHR1ST\AppData\Local\Temp
+    udp = 20900
+    [[VBoxDevice]]
+        image = Host1
+        nics = 2
+        first_nic_managed = False
+        headless_mode = True
+        console_support = True
+        console_telnet_server = True
+    [[VBOX Q1]]
+        image = Q1
+        nics = 8
+        e0 = SW1 5
+        e1 = Host1 e0
+        symbol = router-vb
+        x = -279.0
+        y = 4.39994707335e-11
+        z = 1.0
+    [[VBOX Q3]]
+        image = Q3
+        nics = 8
+        e0 = SW1 3
+        e1 = Host3 e0
+        symbol = router-vb
+        x = 103.0
+        y = -13.0
+        z = 1.0
+    [[VBOX Q2]]
+        image = Q2
+        nics = 8
+        e0 = SW1 2
+        e1 = Host2 e0
+        symbol = router-vb
+        x = -98.000000001
+        y = 99.0000000003
+        z = 1.0
+    [[VBOX Q5]]
+        image = Q5
+        nics = 8
+        e0 = Q4 e1
+        symbol = router-vb
+        x = 289.000000001
+        y = -269.0
+        z = 1.0
+    [[VBOX Q4]]
+        image = Q4
+        nics = 8
+        e0 = SW1 4
+        e1 = Q5 e0
+        symbol = router-vb
+        x = -102.0
+        y = -270.0
+        z = 1.0
+    [[VBOX Host3]]
+        image = Host3
+        e0 = Q3 e1
+        x = 279.500000001
+        y = -20.5
+        z = 1.0
+    [[VBOX Host2]]
+        image = Host2
+        e0 = Q2 e1
+        x = 48.5000000002
+        y = 148.5
+        z = 1.0
+    [[VBOX Host1]]
+        e0 = Q1 e1
+        e1 = SW2 1
+        x = -413.500000001
+        y = -8.49999999996
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    m11 = 0.999999999998
+    m22 = 0.999999999998
+    [[NOTE 1]]
+        text = "2001:db8:abcd:0001::/64"
+        x = -247.000000001
+        y = -139.0
+    [[NOTE 2]]
+        text = "2001:db8:abcd:1000::/64"
+        x = -325.000000001
+        y = 71.0000000003
+    [[NOTE 3]]
+        text = "2001:db8:abcd:4000::/64"
+        x = -466.000000001
+        y = 185.0
+    [[NOTE 4]]
+        text = "2001:db8:abcd:2000::/64"
+        x = -157.000000001
+        y = 169.0
+    [[NOTE 5]]
+        text = "2001:db8:abcd:3000::/64"
+        x = 58.0000000003
+        y = 64.0000000003
+    [[NOTE 6]]
+        text = "2001:db8:abcd:0000::/64"
+        x = 46.0000000003
+        y = -272.000000001
+    [[NOTE 7]]
+        text = ":1"
+        x = -24.9999999997
+        y = -270.000000001
+    [[NOTE 8]]
+        text = ":1"
+        x = -303.000000001
+        y = -16.0000000001
+    [[NOTE 9]]
+        text = ":1"
+        x = -25.9999999997
+        y = 104.0
+    [[NOTE 10]]
+        text = ":3"
+        x = 86.0000000001
+        y = -35.0
+    [[NOTE 11]]
+        text = "Servers"
+        x = -278.276262022
+        y = 47.4264068713
+        font = "MS Shell Dlg 2,12,-1,5,75,0,0,0,0,0"
+    [[NOTE 12]]
+        text = "AS200"
+        x = 337.227488786
+        y = -319.27416998
+        font = "MS Shell Dlg 2,12,-1,5,75,0,0,0,0,0"
+    [[NOTE 13]]
+        text = "Infrastructure - subnet 2"
+        x = -245.000000001
+        y = -161.0
+    [[NOTE 14]]
+        text = ":1"
+        x = -224.000000001
+        y = -29.0
+    [[NOTE 15]]
+        text = "примерно получено адресно п-во 2001:db8:abcd::/48"
+        x = -444.000000002
+        y = -364.000000001
+    [[NOTE 16]]
+        text = "ISP"
+        x = 359.984848099
+        y = -225.367532369
+        font = "MS Shell Dlg 2,12,-1,5,75,0,0,0,0,0"
+    [[NOTE 17]]
+        text = " Some Other"
+        x = -433.000000001
+        y = 164.0
+        font = "MS Shell Dlg 2,12,-1,5,75,0,0,0,0,0"
+    [[NOTE 18]]
+        text = "Infrastructure - subnet 1"
+        x = 49.0000000003
+        y = -290.000000001
+    [[NOTE 19]]
+        text = ":4"
+        x = -92.0000000007
+        y = -214.0
+    [[NOTE 20]]
+        text = ":1"
+        x = 178.0
+        y = -21.0
+    [[NOTE 21]]
+        text = ":2"
+        x = -57.9999999997
+        y = 50.0000000001
+    [[NOTE 22]]
+        text = ":2"
+        x = 258.0
+        y = -267.000000001
+    [[NOTE 23]]
+        text = "AS100"
+        x = -166.489465456
+        y = -315.984848099
+        font = "MS Shell Dlg 2,12,-1,5,75,0,0,0,0,0"
+    [[NOTE 24]]
+        text = "Students"
+        x = 100.774603256
+        y = 34.012193309
+        font = "MS Shell Dlg 2,12,-1,5,75,0,0,0,0,0"
+    [[NOTE 25]]
+        text = "Employees"
+        x = -120.428498913
+        y = 146.17871555
+        font = "MS Shell Dlg 2,12,-1,5,75,0,0,0,0,0"
+    [[NOTE 26]]
+        text = ":2"
+        x = -350.000000001
+        y = -16.0
